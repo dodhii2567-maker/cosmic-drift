@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#09090b">
+    <title>Cosmic Drift: Zenith</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            user-select: none;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #09090b;
+            color: #fafafa;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overscroll-behavior: none;
+        }
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        canvas { touch-action: none; }
+        
+        @media screen and (orientation: portrait) {
+            #orientation-warning { display: flex !important; }
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+    <div id="orientation-warning" style="display:none; position:fixed; inset:0; background:#09090b; z-index:9999; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:2rem;">
+        <div class="animate-bounce mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 text-violet-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+            </svg>
+        </div>
+        <h2 class="text-xl font-orbitron font-bold">LANDSCAPE MODE REQUIRED</h2>
+        <p class="text-zinc-500 mt-2 text-sm">기기를 가로로 돌려주시면 게임이 시작됩니다.</p>
+    </div>
+    <!-- Vite 환경에서는 script type="module"로 index.tsx를 직접 연결합니다 -->
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
